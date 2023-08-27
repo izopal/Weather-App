@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погода</title>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!------------------------ Титульний блок прогнозу погоди --------------------------------------->
+        <div class="left-info">
+            <div class="today-info">
+                <h2>Вівторок</h2>
+                <span>08 Серпня 2023</span>
+                <div class="location">
+                        <svg  
+                            class="ionicon left location"
+                            viewBox="0 0 24 24"
+                            width="24"
+                            height="24">
+                            <circle cx="12" cy="12" r="4"/>
+                            <path d="M13 4.069V2h-2v2.069A8.01 8.01 0 0 0 4.069 11H2v2h2.069A8.008 8.008 0 0 0 11 19.931V22h2v-2.069A8.007 8.007 0 0 0 19.931 13H22v-2h-2.069A8.008 8.008 0 0 0 13 4.069zM12 18c-3.309 0-6-2.691-6-6s2.691-6 6-6 6 2.691 6 6-2.691 6-6 6z"/>
+                        </svg>
+                        <!-- <i></i> -->
+                        <span>Kalush, UA</span>
+                </div>
+            </div>
+            <div class="today-weather">
+                <!-- <img src="./SVG/1.svg" alt=""> -->
+                <i></i>
+                <h2> 25&deg;C</h1>
+                <h3> Сонячно</h3>
+            </div>
+        </div>
+        
+        <!-- --------------------- Прихований блок прогнозу погоди -------------------------------------->
+        <div class="right-info">
+            <!-------------------- Блок детальної інформації про поточногу погоди ----------------------->
+            <div class="day-info">
+                <div>
+                    <span class="title">опади</span>
+                    <span class="value">45 %</span>
+                </div>
+                <div>
+                    <span class="title">вологість</span>
+                    <span class="value">83 %</span>
+                </div>
+                <div>
+                    <span class="title">тиск </span>
+                    <span class="value">1021 мм</span>
+                </div>
+                <div>
+                    <span class="title">швидкість вітру</span>
+                    <span class="value">5 км/год</span>
+                </div>
+            </div>
+
+            <!-------------------- Блок прогнозу погоди на наступні 5 днів ------------------------------>
+            <ul class="days-list">
+                <li>
+                    <i></i>
+                    <span>Cр</span>
+                    <span class="day-temp">23&deg;C</span>
+                </li>
+                <li>
+                    <i></i>
+                    <span>Чт</span>
+                    <span class="day-temp">23&deg;C</span>
+                </li>
+                <li>
+                    <i></i>
+                    <span>Пт</span>
+                    <span class="day-temp">22&deg;C</span>
+                </li>
+                <li>
+                    <i></i>
+                    <span>Сб</span>
+                    <span class="day-temp">22&deg;C</span>
+                </li>
+                <li>
+                    <i></i>
+                    <span>Нд</span>
+                    <span class="day-temp">26&deg;C</span>
+                </li>
+                <li>
+                    <i></i>
+                    <span>Пн</span>
+                    <span class="day-temp">23&deg;C</span>
+                </li>
+            </ul>
+
+            <!-------------------- Блок пошуку прогнозу погоди за локацією ------------------------------>
+            <div class="search-container">
+                <span class="search-icon">
+                    <i class='bx bx-search-alt'></i>
+                </span>
+                <input class="loc-input" 
+                       type="text" 
+                       placeholder="Введіть місто">
+            </div>
+        </div>  
+    </div>
+
+    
+    <script src="./weather.js"></script>
+    <script src="./scrypt.js"></script>
+
+
+</body>
+</html>

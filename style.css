@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&     family=Poppins:ital,wght@1,500&family=Raleway&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #37474f;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    height:100%;
+    align-items: center;
+    user-select: none;
+}
+
+/*  <----------------------- Титульний блок прогнозу погоди --------------------------------------->  */
+.left-info {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    width: 40vh;
+    height: 60%;
+    border-radius: 5vh;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .35);
+    margin-right: 10px;
+    
+    background: url(./image/karpaty.jpg);
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    cursor: pointer;
+    transform: scale(1.04) 
+               perspective(200px)
+               translateX(0px);
+    transition: all .5s ease;
+}
+.left-info.active {
+    transform: translateX(-40.5vh);
+}
+.left-info.active:hover {
+    transform: translateX(-41vh)
+               scale(1.1)  
+               perspective(2500px)
+               rotateY(20deg);
+}
+
+/*  <----------------------- Титульний блок ВВЕРХ --------------------------------------->  */
+.today-info{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 10%;
+}
+.today-info h2 {
+    margin-bottom: 2.25%;
+    text-align: center;
+    font-size: 5vh;
+}
+.today-info span {
+    font-size: 3vh;
+}
+.today-info .location  {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    font-size: 2.25vh;
+}
+.today-info .location  svg {
+    margin-right: 1%;
+    height: 2.25vh;
+    width: auto;
+}
+.today-info .location svg circle, path {
+    fill: white;
+}
+
+/*  <----------------------- Титульний блок НИЗ --------------------------------------->  */
+.today-weather {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    bottom: 5%;
+    left: 8%;
+    font-size: 2.5vh;
+}
+.today-weather i {
+    font-size: 14vh;
+}
+.today-weather h2 {
+    font-weight: 700;
+    font-size: 6vh;
+}
+
+/* <----------------------- Прихований блок прогнозу погоди --------------------------------------> */
+.right-info {
+    position: absolute;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    height: 45%;
+    width: 50vh;
+    padding: 0 5vh;
+
+    border-radius: 5vh;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .35);
+    color: #fff;
+    transform: translateX(-20vh) scaleX(.4);  
+    opacity: 0;
+    transition: all .5s ease;
+}
+.right-info.active{
+    opacity: 1;
+    transform: translateX(0px) scaleX(1);
+}
+
+/*  <-------------------- Блок детальної інформації про поточногу погоди -----------------------> */
+.day-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 2.5vh;
+}
+.day-info div:not(:last-child){
+    margin-bottom: 1%;
+}
+.day-info div .title {
+    font-weight: 700;
+}
+.day-info div .value {
+    float: right;
+}
+
+/*< -------------------- Блок прогнозу погоди на наступні 5 днів ------------------------------>  */
+.days-list {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 1% 0;
+    background: transparent;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .35);
+    border-radius: 2.5vh;
+}
+.days-list li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2.5% 5%;
+    font-size: 2.5vh;
+    cursor: pointer;
+}
+
+.days-list li:hover{
+    background: #fff;
+    color: #222831;
+    border-radius: 1.5vh;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .35);
+    transform: scale(1.2);
+}
+.days-list li i {
+    font-size: 4vh;
+}
+
+.days-list li .day-temp {
+    font-weight: 700;
+    font-size: 2vh;
+}
+
+/*  <-------------------- Блок пошуку прогнозу погоди за локацією ------------------------------> */
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search-container .search-icon{
+    display: none;
+}
+.search-container .loc-input{
+    padding: 1.5vh 4vh;
+    width: 100%;
+    background: transparent;
+    text-align: center;
+    border: none;
+    border-radius: 2vh;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .35);
+    color: white;
+    font-size: 2vh;
+    font-weight: 700;
+}
+.search-container input::placeholder{
+    text-align: center;
+}
+.search-container input.active::placeholder{
+    text-align: start;
+}
+.search-container input.active:placeholder-shown{
+    text-align: start;
+}
